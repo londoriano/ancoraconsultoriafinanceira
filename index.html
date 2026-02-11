@@ -5,24 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Âncora Consultoria Financeira</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon-16x16.png">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 
     <header>
         <img src="./img/faecaac8-8678-481b-89c8-397ccc53fe26.png" alt="logo de âncora">
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <nav class="nav-links">
             <a href="#sobre">Sobre</a>
             <a href="#servicos">Serviços</a>
+            <a href="#depoimentos">Depoimentos</a>
             <a href="#contato">Contato</a>
         </nav>
     </header>
 
     <section class="hero">
         <h1>Sua Âncora Para Um Futuro Financeiro Sólido</h1>
-        <p>Navegue com segurança no mundo das finanças. Oferecemos clareza e direção para você alcançar seus maiores objetivos.</p>
+        <p>Navegue com segurança no mundo das finanças. Clareza e direção para alcançar seus maiores objetivos.</p>
+        <br>
+        <a href="https://meetings.hubspot.com/ancora-consultoria" target="_blank" class="cta-button">Agendar Diagnóstico Gratuito</a>
     </section>
 
     <main>
@@ -31,41 +41,64 @@
             <h2>Sobre a Âncora Consultoria</h2>
             <p>
                 Nossa missão é ser o ponto de estabilidade e segurança na vida financeira de nossos clientes.
-                 Acreditamos que, com o planejamento correto, qualquer pessoa pode alcançar a tranquilidade e a prosperidade. A Âncora nasceu do propósito de descomplicar as finanças e transformá-las em uma ferramenta para a realização de sonhos, guiando cada passo com transparência, ética e compromisso.
+                 Acreditamos que, com o planejamento correto, qualquer pessoa pode alcançar a tranquilidade e a prosperidade. A Âncora nasceu do propósito de descomplicar as finanças e transformá-las em uma ferramenta para a realização de sonhos.
             </p>
         </section>
 
         <section id="servicos">
             <h2>Nossos Serviços</h2>
-            <p>Oferecemos soluções personalizadas para cada etapa da sua jornada financeira.</p>
+            <p>Soluções especializadas para pessoas, casais e empresas.</p>
             <div class="servicos-container">
                 <div class="servico-card">
-                    <h3>Planejamento Financeiro Pessoal</h3>
-                    <p>Organize suas finanças, defina metas claras e crie um plano de ação para quitar dívidas, investir para a aposentadoria ou realizar grandes projetos de vida.</p>
+                    <i class="fas fa-user-shield servico-icon"></i>
+                    <h3>Consultoria de Finanças Pessoais</h3>
+                    <p>Organize seu orçamento, elimine dívidas e construa uma reserva de segurança. Um plano personalizado para sua liberdade financeira.</p>
                 </div>
                 <div class="servico-card">
-                    <h3>Consultoria de Investimentos</h3>
-                    <p>Descubra as melhores estratégias de investimento para o seu perfil e objetivos. Analisamos o mercado para que você invista com segurança e rentabilidade.</p>
+                    <i class="fas fa-heart servico-icon"></i>
+                    <h3>Consultoria de Finanças Para Casais</h3>
+                    <p>Alinhem objetivos e acabem com as brigas por dinheiro. Aprendam a construir um patrimônio juntos com transparência e união.</p>
                 </div>
                 <div class="servico-card">
-                    <h3>Gestão de Patrimônio</h3>
-                    <p>Soluções completas para a proteção e o crescimento do seu patrimônio. Cuidamos do seu legado para que você tenha tranquilidade no presente e no futuro.</p>
+                    <i class="fas fa-chart-line servico-icon"></i>
+                    <h3>Consultoria Financeira Empresarial</h3>
+                    <p>Gestão de fluxo de caixa, precificação e estratégias de lucro. Profissionalize as finanças do seu negócio.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-chalkboard-teacher servico-icon"></i>
+                    <h3>Palestras e Cursos</h3>
+                    <p>Educação financeira para grupos e empresas. Leve conhecimento e produtividade para sua equipe ou evento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos">
+            <h2>O que dizem nossos clientes</h2>
+            <div class="depoimentos-container">
+                <div class="depoimento-card">
+                    <p>"A Âncora mudou completamente nossa visão sobre dinheiro. Finalmente conseguimos sair do vermelho e começar a investir."</p>
+                    <h4>- Mariana & Carlos</h4>
+                </div>
+                <div class="depoimento-card">
+                    <p>"Minha empresa estava estagnada. Com a consultoria empresarial, ajustamos o caixa e dobramos o lucro em 6 meses."</p>
+                    <h4>- Rafael S., Empresário</h4>
+                </div>
+                <div class="depoimento-card">
+                    <p>"Profissionalismo e clareza. Pela primeira vez sinto que tenho controle sobre o meu futuro financeiro."</p>
+                    <h4>- Ana Paula T.</h4>
                 </div>
             </div>
         </section>
 
         <section id="contato">
-            <h2>Fale Conosco</h2>
-            <p>Pronto para ancorar seu futuro financeiro? Preencha o formulário abaixo e nossa equipe entrará em contato em breve.</p>
-            <div class="form-container">
-                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-                <script>
-                  hbspt.forms.create({
-                    region: "na1",
-                    portalId: "50533432",
-                    formId: "2fca1469-e736-403b-9fcd-370087b10c3e"
-                  });
-                </script>
+            <h2>Vamos Conversar?</h2>
+            <p>Dê o primeiro passo para sua transformação financeira agora mesmo.</p>
+            
+            <div class="cta-container">
+                <a href="https://meetings.hubspot.com/ancora-consultoria" target="_blank" class="cta-button-large">
+                    Quero meu Diagnóstico Financeiro Gratuito
+                </a>
+                <p class="cta-note">Clique acima para agendar seu horário exclusivo.</p>
             </div>
         </section>
 
@@ -75,9 +108,17 @@
         <p>&copy; 2025 Âncora Consultoria Financeira. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/50533432.js"></script>
-<!-- End of HubSpot Embed Code -->
+    <a href="https://wa.me/5548920011614?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Consultoria%20Financeira" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Script simples para o menu mobile
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>

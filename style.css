@@ -1,237 +1,353 @@
- /* --- Reset Básico e Fontes --- */
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-            background-color: #f4f7f6;
-            color: #333;
-        }
+/* --- Reset Básico e Fontes --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f4f7f6;
+    color: #333;
+    overflow-x: hidden; /* Evita rolagem lateral no mobile */
+}
 
-        /* --- Estilo do Cabeçalho e Navegação --- */
-        header {
-            background-color: #0d2c4b; /* Azul escuro, cor de âncora */
-            color: white;
-            padding: 1px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 90%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+/* --- Estilo do Cabeçalho e Navegação --- */
+header {
+    background-color: #0d2c4b; /* Azul escuro, cor de âncora */
+    color: white;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 90%; /* Ajuste para o padding */
+    height: 80px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-sizing: content-box; /* Garante consistência */
+}
 
-       header img{
-        max-width: 120px;
-        max-height: 90px;
-        padding: 0;
-       
-       }
+header img {
+    max-width: 120px;
+    max-height: 70px;
+    object-fit: contain;
+}
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
 
-        .nav-links a:hover {
-            color: #ffc107; /* Um toque de dourado para destaque */
-        }
+.nav-links a:hover {
+    color: #ffc107;
+}
+
+/* --- Menu Hambúrguer --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* --- Seção Hero --- */
+.hero {
+    background: linear-gradient(rgba(13, 44, 75, 0.85), rgba(13, 44, 75, 0.85)),
+     url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1170&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh; /* Garante tela cheia */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+/* --- Botões CTA --- */
+.cta-button, .cta-button-large {
+    background-color: #ffc107;
+    color: #0d2c4b;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: inline-block;
+}
+
+.cta-button:hover, .cta-button-large:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.cta-button-large {
+    font-size: 1.2rem;
+    padding: 20px 40px;
+}
+
+/* --- Estilos Gerais das Seções --- */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #0d2c4b;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #ffc107;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+/* --- Seção 'Serviços' --- */
+#servicos {
+    background-color: #f9f9f9;
+}
+
+.servicos-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.servico-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 40px 30px;
+    width: 260px; /* Largura fixa para alinhamento */
+    text-align: center; /* Centralizado fica melhor com ícones */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.servico-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-bottom: 4px solid #ffc107;
+}
+
+.servico-icon {
+    font-size: 3rem;
+    color: #0d2c4b;
+    margin-bottom: 20px;
+}
+
+.servico-card h3 {
+    color: #0d2c4b;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    min-height: 50px; /* Alinha os títulos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Seção 'Depoimentos' --- */
+#depoimentos {
+    background-color: #ffffff;
+}
+
+.depoimentos-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.depoimento-card {
+    background-color: #f4f7f6;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 300px;
+    text-align: left;
+    position: relative;
+    font-style: italic;
+}
+
+.depoimento-card::before {
+    content: '\201C'; /* Aspas */
+    font-size: 4rem;
+    color: #ffc107;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    opacity: 0.5;
+}
+
+.depoimento-card h4 {
+    margin-top: 20px;
+    color: #0d2c4b;
+    font-style: normal;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* --- Seção 'Contato' --- */
+#contato {
+    background-color: #0d2c4b;
+    color: white;
+    padding: 100px 10%;
+}
+
+#contato h2 {
+    color: white;
+}
         
-        /* --- Menu Hambúrguer (Inicialmente escondido) --- */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        
-        .hamburger .bar {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 4px 0;
-            transition: 0.4s;
-        }
+#contato h2::after {
+    background-color: #ffc107;
+}
 
-        /* --- Seção Hero (Introdução) --- */
-        .hero {
-            background: linear-gradient(rgba(13, 44, 75, 0.8), rgba(13, 44, 75, 0.8)),
-             url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 5%;
-        }
+#contato p {
+    color: #e0e0e0;
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
+.cta-container {
+    margin-top: 40px;
+}
 
-        .hero p {
-            font-size: 1.5rem;
-            max-width: 800px;
-        }
-        
-        /* --- Estilos Gerais das Seções --- */
-        section {
-            padding: 100px 10%;
-            text-align: center;
-        }
+.cta-note {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    opacity: 0.8;
+}
 
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #0d2c4b;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
+/* --- Botão WhatsApp Flutuante --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 5px #333;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
 
-        /* Linha decorativa abaixo dos títulos */
-        section h2::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background-color: #ffc107;
-        }
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #20ba5a;
+}
 
-        section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-        }
+/* --- Rodapé --- */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
 
-        /* --- Seção 'Sobre' --- */
-        #sobre {
-            background-color: #ffffff;
-        }
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    header {
+        padding: 0 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-        /* --- Seção 'Serviços' --- */
-        .servicos-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Altura do header */
+        left: 0;
+        background-color: #0d2c4b;
+        padding-bottom: 20px;
+    }
 
-        .servico-card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 30px;
-            width: 300px;
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .nav-links.active {
+        display: flex;
+    }
 
-        .servico-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
+    .nav-links a {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-        .servico-card h3 {
-            color: #0d2c4b;
-            font-size: 1.5rem;
-            margin-top: 0;
-        }
+    .hamburger {
+        display: flex;
+    }
 
-        /* --- Seção 'Contato' --- */
-        #contato {
-            background-color: #0d2c4b;
-            color: white;
-        }
-        
-        #contato h2 {
-            color: white;
-        }
-        
-        #contato p {
-            color: #f4f7f6;
-        }
+    section {
+        padding: 60px 5%;
+    }
 
-        .form-container {
-            max-width: 700px;
-            margin: 40px auto 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        
-        /* --- Rodapé --- */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        /* --- ############# PARTE RESPONSIVA PARA MOBILE ############# --- */
-        @media (max-width: 768px) {
-            /* --- Fontes --- */
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1.2rem;
-            }
-            section h2 {
-                font-size: 2rem;
-            }
-            
-            /* --- Navegação Mobile --- */
-            .nav-links {
-                display: none; /* Esconde o menu normal */
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 70px; /* Altura do cabeçalho */
-                left: 0;
-                background-color: #0d2c4b;
-            }
-            
-            .nav-links.active {
-                display: flex; /* Mostra o menu quando ativo */
-            }
+    .cta-button-large {
+        width: 100%; /* Botão full width no mobile */
+        box-sizing: border-box;
+        font-size: 1rem;
+        padding: 15px;
+        white-space: normal; /* Permite quebra de linha */
+    }
 
-            .nav-links a {
-                text-align: center;
-                padding: 15px;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .hamburger {
-                display: flex; /* Mostra o ícone hambúrguer */
-            }
-            
-            /* --- Layouts das Seções --- */
-            section {
-                padding: 80px 5%;
-            }
-            
-            .servicos-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .servico-card {
-                width: 90%;
-                max-width: 250px;
-            }
-        }
+    .servico-card, .depoimento-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
